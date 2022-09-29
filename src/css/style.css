@@ -12,34 +12,83 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-nav {
-    display: flex;
-}
+/* NavBar styles */
 
-.nav-list {
-    display: none;
-    margin-left: auto;
-}
-
-.nav-list > li {
-    list-style: none;
-}
-
-.nav-list > li > a, .nav-logo{
-    text-decoration: none;
-    color: black;
-}
-
-.menu-bar{
+#btn-svg{
     width: 20px;
 }
 
-@media only screen and (min-width: 786px) {
- .menu-bar{
-    display: none;
- }
- 
- .nav-list{
-    display: flex;
- }
+header{
+    /* display: flex; */
+    position: relative;
+    /* border: 1px solid red; */
 }
+
+#bars{
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    /* z-index: 1; */
+}
+
+#cross{
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+}
+
+.nav-logo{
+    /* border: 1px solid red; */
+}
+
+nav{
+    display: flex;
+    /* border: 1px solid red; */
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background-color: rgb(213, 184, 184);
+    z-index: 1;
+
+}
+
+.responsive-menu{
+    visibility: visible;
+}
+
+nav li{
+    padding: 10px;
+    list-style: none;
+}
+
+.menu-bar{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+/* breakpoints for the desktop screens */
+
+@media only screen and (min-width:768px) {
+    header{
+        display: flex;
+    }
+
+    .menu-bar{
+        visibility: hidden;
+    }
+
+    nav{
+        visibility: visible;
+        position: initial;
+        background-color: white;
+    }
+}
+
+/* Home page styles */
+
+/* Hero section styles */
