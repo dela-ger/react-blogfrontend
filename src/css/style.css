@@ -39,6 +39,12 @@ header{
 
 .nav-logo{
     /* border: 1px solid red; */
+    padding: 1.2rem;
+}
+
+.nav-logo a{
+    color: black;
+    /* text-decoration: none; */
 }
 
 nav{
@@ -63,6 +69,13 @@ nav{
 nav li{
     padding: 10px;
     list-style: none;
+    font-size: 2rem;
+    /* border-bottom: 2px solid black; */
+}
+
+nav li a{
+    color: #000;
+    text-decoration: none;
 }
 
 .menu-bar{
@@ -83,12 +96,84 @@ nav li{
     }
 
     nav{
+        display: flex;
         visibility: visible;
         position: initial;
         background-color: white;
+        flex-direction: row;
+    }
+
+    nav li{
+        font-size: initial;
     }
 }
 
 /* Home page styles */
 
 /* Hero section styles */
+
+.hero{
+    border: 2px solid greenyellow;
+    padding: 0 1rem 2rem;
+}
+
+.hero > .hero-content{
+    display: grid;
+    text-align: justify;
+    margin-top: 8.5rem;
+    /* border: 1px blue solid; */
+    gap: 1.5rem;
+}
+
+.hero-content > h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+#hero-btn{
+    width: 65%;
+    font-size: 1.5rem;
+    padding: 1.05rem;
+    color: black;
+}
+
+#hero-btn > a{
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+/* breakpoint for hero section */
+@media only screen and (min-width:768px) {
+    #hero-btn{
+        width: 25%;
+    }
+}
+
+/* Featured blog section on the home page */
+
+.featured-blogs{
+    display: grid;
+    place-items: center;
+    border: 1px solid red;
+    width: 100%;
+    padding: 2rem;
+    grid-template-columns: 200px 200px;
+    grid-row: auto auto;
+    
+}
+
+.blog-card{
+    border: 1px solid yellow;
+    min-width: 50%;
+}
+
+.image-featured{
+    border: 1px solid blue;
+    min-width: 2rem;
+}
+
+#title-svg{
+    object-fit: cover;
+    max-width: 20rem;
+}

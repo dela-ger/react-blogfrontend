@@ -20,6 +20,7 @@ function NavBar() {
             <li>
                 <NavLink onClick={showMenu} to="/">Home</NavLink>
             </li>
+        
             <li>
                 <NavLink onClick={showMenu} to="/about">About Us</NavLink>
             </li>
