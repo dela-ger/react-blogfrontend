@@ -25,7 +25,7 @@ function Home() {
       <section className="featured-blogs">
         <div className="blog-card">
           <div className="image-featured">
-            <img id="title-svg" src={seven} alt="some svg" />
+            {/* <img id="title-svg" src={seven} alt="some svg" /> */}
           </div>
           <div className="title">
             <h3>The Best Harry Potter Films</h3>
@@ -40,7 +40,7 @@ function Home() {
 
         <div className="blog-card">
           <div className="image-featured">
-            <img id="title-svg" src={seven} alt="some svg" />
+            {/* <img id="title-svg" src={seven} alt="some svg" /> */}
           </div>
           <div className="title">
             <h3>The Best Harry Potter Films</h3>
@@ -55,7 +55,7 @@ function Home() {
 
         <div className="blog-card">
           <div className="image-featured">
-            <img id="title-svg" src={seven} alt="some svg" />
+            {/* <img id="title-svg" src={seven} alt="some svg" /> */}
           </div>
           <div className="title">
           <h3>The Best Harry Potter Films</h3>
@@ -68,9 +68,9 @@ function Home() {
           </div>
         </div>
 
-        <div className="blog-card">
+       <div className="blog-card">
           <div className="image-featured">
-            <img id="title-svg" src={seven} alt="some svg" />
+            {/* <img id="title-svg" src={seven} alt="some svg" /> */}
           </div>
           <div className="title">
           <h3>The Best Harry Potter Films</h3>

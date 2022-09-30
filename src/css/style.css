@@ -113,7 +113,7 @@ nav li a{
 /* Hero section styles */
 
 .hero{
-    border: 2px solid greenyellow;
+    /* border: 2px solid greenyellow; */
     padding: 0 1rem 2rem;
 }
 
@@ -153,27 +153,45 @@ nav li a{
 /* Featured blog section on the home page */
 
 .featured-blogs{
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     border: 1px solid red;
     width: 100%;
     padding: 2rem;
-    grid-template-columns: 200px 200px;
+    /* grid-template-columns: auto auto;
     grid-row: auto auto;
-    
+    gap: 10px; */
 }
 
 .blog-card{
     border: 1px solid yellow;
-    min-width: 50%;
+    width: 90%;
+    max-width: 450px;
+    height: 100%;
 }
 
 .image-featured{
     border: 1px solid blue;
-    min-width: 2rem;
+    width: 100%;
+    background-color: red;
+    min-height: 10rem;
+    
 }
 
 #title-svg{
     object-fit: cover;
-    max-width: 20rem;
+    /* width: 100%; */
+}
+
+@media only screen and (min-width: 768px) {
+
+    .featured-blogs{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-row: auto auto;
+        gap: 10px;
+    }
+    
 }
