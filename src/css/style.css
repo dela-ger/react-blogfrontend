@@ -161,8 +161,8 @@ nav li a{
     width: 100%;
     padding: 2rem;
     /* grid-template-columns: auto auto;
-    grid-row: auto auto;
-    gap: 10px; */
+    grid-row: auto auto;*/
+    gap: 10px;
 }
 
 .blog-card{
@@ -185,13 +185,43 @@ nav li a{
     /* width: 100%; */
 }
 
+.title > h3, .date-btn > #date {
+    padding-left: 1.5rem;
+}
+
+.title-block{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.more-btn{
+    /* margin-right: auto; */
+}
+
+#date{
+    margin-right: 6.2rem;
+}
+
+#arrow-right{
+    width: 20px;
+
+}
+
 @media only screen and (min-width: 768px) {
 
     .featured-blogs{
         display: grid;
+        place-items: center;
         grid-template-columns: auto auto;
         grid-row: auto auto;
         gap: 10px;
+        /* padding-left: 2rem;
+        padding-right: 2rem; */
+    }
+
+    .blog-card{
+        margin-left: 4rem;
+        margin-right: 4rem;
     }
     
 }
