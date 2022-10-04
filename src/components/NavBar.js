@@ -25,7 +25,7 @@ function NavBar() {
                 <NavLink onClick={showMenu} to="/about">About Us</NavLink>
             </li>
             <li>
-                <NavLink onClick={showMenu} to="/blog">Blog</NavLink>
+                <NavLink onClick={showMenu} to="/">Blog</NavLink>
             </li>
             
             <button type='button' onClick={showMenu} className='menu-bar nav-close-btn' id='cross'><img src={xmark} alt="humburger menu" id='btn-svg' /> </button>

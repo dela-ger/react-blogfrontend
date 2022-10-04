@@ -27,21 +27,19 @@ function Home() {
 
     posts.map(post => {
       return list.push(
-        <div className="blog-card">
+        <div key={post.id} className="blog-card">
           <div className="image-featured">
             
           </div>
           <div className="title-block">
             <div className="title">
-              <h3>{/*{Posts.map(post => {
-              return post
-            })}*/}{post.title}</h3>
+              <h3>{post.title}</h3>
             </div>
             <div className="date-btn">
               <span id="date">
                 September,2022
               </span>
-              <Link to="/blog">
+              <Link to={`/blog/${post.id}`}>
                 <button className='more-btn'><img id='arrow-right' src={arrowRight} alt="arrow right" /></button>
               </Link>
             </div>
@@ -50,19 +48,6 @@ function Home() {
         </div>
       )
     })
-
-    // for(let i=0; i<list.length; i+=2){
-    //   result.push(
-    //     <div>
-    //       <div>
-    //         {list[i]}
-    //       </div>
-    //       <div>
-    //         {list[i+1] ? list[i+1] : null }
-    //       </div>
-    //     </div>
-    //   )
-    // }
 
     for(let i=0; i<list.length; i++){
       result.push(
@@ -88,6 +73,13 @@ function Home() {
       <section className="featured-blogs">        
         {getPosts()}
       </section>
+
+<hr />
+
+      <section className='newsletter'>
+        
+      </section>
+
     </>
   )
 }
