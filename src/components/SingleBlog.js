@@ -1,18 +1,23 @@
 import React, {useState, useEffect} from 'react'
 import PropTypes from 'prop-types'
 import { Link, useParams } from 'react-router-dom'
-import Posts from "../data/data.json"
+import axios from 'axios';
 
 function SingleBlog(props) {
-    const {blogId} = useParams()  
+    const {postAuthor} = useParams()
+    const url = 'https://newsapi.org/v2/everything?' +
+    'q=Apple&' +
+    'from=2022-10-04&' +
+    'sortBy=popularity&' +
+    'apiKey=8eae748eabe14f11ae29039013de3dfe';
 
   return (
     <>
     <div>SingleBlog</div>
     <div>
-    {/* <h2>{title}</h2>
-    <h5>{body}</h5> */}
-    <h3>{blogId}</h3>
+    <h2></h2>
+    <h5></h5>
+    <h3>{postAuthor}</h3>
     </div>
     
     <Link to="/">Home</Link>

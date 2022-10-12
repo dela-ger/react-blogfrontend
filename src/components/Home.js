@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import seven from "../Assets/17.svg";
+import uniqid from "uniqid"
 import arrowRight from "../Assets/arrow-right-solid.svg";
 import axios from 'axios';
-import Posts from "../data/data.json"
 
 function Home() {
-  const url = 'https://jsonplaceholder.typicode.com/todos/1'
+  const url = 'https://newsapi.org/v2/everything?' +
+  'q=Apple&' +
+  'from=2022-10-04&' +
+  'sortBy=popularity&' +
+  'apiKey=8eae748eabe14f11ae29039013de3dfe';
   const [posts, setPost] = useState([])
 
-
-// function to put data into the posts state
-  const dataPost = () => {
-    setPost(Posts)
-    
+  const fetchNews = async () =>{
+    try {
+      const response = await axios.get(url)
+      const data = response.data
+      const articles = data.articles
+      articles.forEach(article => {
+        return console.log(article.title)
+      });
+      // console.log(articles)
+      setPost(articles)
+    } catch (error) {
+      console.log(error.response)
+    }
   }
+
   useEffect(() => {
-    dataPost()
+    fetchNews()
   },[])
 
   console.log(posts)
@@ -27,7 +39,7 @@ function Home() {
 
     posts.map(post => {
       return list.push(
-        <div key={post.id} className="blog-card">
+        <div key={uniqid()} className="blog-card">
           <div className="image-featured">
             
           </div>
@@ -39,7 +51,7 @@ function Home() {
               <span id="date">
                 September,2022
               </span>
-              <Link to={`/blog/${post.id}`}>
+              <Link to={`/blog/${post.author}`}>
                 <button className='more-btn'><img id='arrow-right' src={arrowRight} alt="arrow right" /></button>
               </Link>
             </div>
@@ -49,7 +61,7 @@ function Home() {
       )
     })
 
-    for(let i=0; i<list.length; i++){
+    for(let i=0; i<list.length-90; i++){
       result.push(
         list[i]
       )
@@ -77,7 +89,34 @@ function Home() {
 <hr />
 
       <section className='newsletter'>
-        
+        <div className="description">
+          <h2>Stay in the know</h2>
+          <p>Join Kob's blog Newsletter to stay up-to-date
+            on what's happening with people in the community
+          </p>
+          <img src="" alt="" />
+        </div>
+
+        <div className="news-sign-up">
+          <h2>Join Our Newsletter</h2>
+
+          <form action="/" method="post">
+            <div className="form-box">
+              <label htmlFor="email">Email</label>
+              <input type="email" name='email' id='email' className='form-input' placeholder='kobby@gmail.com'/>
+
+              <label htmlFor="first-name">First name</label>
+              <input type="text" name='first-name' id='first-name' className='form-input' placeholder='Kobby'/>
+            
+              <label htmlFor="last-name">Last name</label>
+              <input type="text" name="last-name" id="last-name" className='form-input' placeholder='Bobby'/>
+
+              <input type="button" value="Submit" className='form-input' id='submit-btn'/>
+            </div>
+
+          </form>
+        </div>
+
       </section>
 
     </>
