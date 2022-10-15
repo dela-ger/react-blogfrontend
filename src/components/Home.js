@@ -89,15 +89,15 @@ function Home() {
 <hr />
 
       <section className='newsletter'>
-        <div className="description">
-          <h2>Stay in the know</h2>
+        <div className="description news-box">
+          <h1>Stay in the know</h1>
           <p>Join Kob's blog Newsletter to stay up-to-date
             on what's happening with people in the community
           </p>
           <img src="" alt="" />
         </div>
 
-        <div className="news-sign-up">
+        <div className="news-sign-up news-box">
           <h2>Join Our Newsletter</h2>
 
           <form action="/" method="post">

@@ -1,11 +1,11 @@
 import React from 'react'
+import "../css/footer.css"
 
 function Footer() {
   return (
-    <div>
-        <hr />
-        Footer
-    </div>
+   <footer>
+      <h1>Kob's Blog</h1>
+   </footer>
   )
 }
 

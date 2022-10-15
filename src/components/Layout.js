@@ -13,6 +13,7 @@ function Layout(props) {
 
     {props.children}
     <Outlet />
+    <hr />
     <Footer />
     </>
 
