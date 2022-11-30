@@ -7,7 +7,7 @@ function SingleBlog(props) {
     const {postAuthor} = useParams()
     const url = 'https://newsapi.org/v2/everything?' +
     'q=Apple&' +
-    'from=2022-10-04&' +
+    'from=2022-11-16&' +
     'sortBy=popularity&' +
     'apiKey=8eae748eabe14f11ae29039013de3dfe';
 
