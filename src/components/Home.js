@@ -7,7 +7,7 @@ import axios from 'axios';
 function Home() {
   const url = 'https://newsapi.org/v2/everything?' +
   'q=Apple&' +
-  'from=2022-11-16&' +
+  'from=2022-12-06&' +
   'sortBy=popularity&' +
   'apiKey=8eae748eabe14f11ae29039013de3dfe';
   const [posts, setPost] = useState([])
@@ -17,10 +17,7 @@ function Home() {
       const response = await axios.get(url)
       const data = response.data
       const articles = data.articles
-      articles.forEach(article => {
-        return console.log(article.title)
-      });
-      // console.log(articles)
+      
       setPost(articles)
     } catch (error) {
       console.log(error.response)
@@ -30,8 +27,6 @@ function Home() {
   useEffect(() => {
     fetchNews()
   },[])
-
-  console.log(posts)
   
   function getPosts() {
     let list = []
