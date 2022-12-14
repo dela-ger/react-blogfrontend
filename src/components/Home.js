@@ -3,69 +3,123 @@ import { Link } from 'react-router-dom'
 import uniqid from "uniqid"
 import arrowRight from "../Assets/arrow-right-solid.svg";
 import axios from 'axios';
+import  { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore'
 
 function Home() {
-  const url = 'https://newsapi.org/v2/everything?' +
-  'q=Apple&' +
-  'from=2022-12-06&' +
-  'sortBy=popularity&' +
-  'apiKey=8eae748eabe14f11ae29039013de3dfe';
+  // const url = 'https://newsapi.org/v2/everything?' +
+  // 'q=Apple&' +
+  // 'from=2022-12-14&' +
+  // 'sortBy=popularity&' +
+  // 'apiKey=8eae748eabe14f11ae29039013de3dfe';
   const [posts, setPost] = useState([])
 
-  const fetchNews = async () =>{
-    try {
-      const response = await axios.get(url)
-      const data = response.data
-      const articles = data.articles
+  // const fetchNews = async () =>{
+  //   try {
+  //     const response = await axios.get(url)
+  //     const data = response.data
+  //     const articles = data.articles
       
-      setPost(articles)
-    } catch (error) {
-      console.log(error.response)
-    }
+  //     setPost(articles)
+  //   } catch (error) {
+  //     console.log(error.response)
+  //   }
+  // }
+
+  const fetchNews = () => {
+    const postsRef = collection(db, 'posts')
+    getDocs(postsRef).then((snapshot) => {
+      let results = [];
+      snapshot.docs.forEach((doc) => {
+        results.push({id: doc.id, ...doc.data()})
+    })
+    setPost(results);
+  })
   }
 
   useEffect(() => {
     fetchNews()
   },[])
-  
-  function getPosts() {
-    let list = []
-    let result = []
 
-    posts.map(post => {
-      return list.push(
+  // console.log(posts)
+
+  
+  
+  // function getPosts() {
+  //   let list = []
+  //   let result = []
+
+  //   posts.map(post => {
+  //     return list.push(
+  //       <div key={uniqid()} className="blog-card">
+  //         <div className="image-featured">
+            
+  //         </div>
+  //         <div className="title-block">
+  //           <div className="title">
+  //             <h3>{post.title}</h3>
+  //           </div>
+  //           <div className="date-btn">
+  //             <span id="date">
+  //               September,2022
+  //             </span>
+  //             <Link to={`/blog/${post.author}`}>
+  //               <button className='more-btn'><img id='arrow-right' src={arrowRight} alt="arrow right" /></button>
+  //             </Link>
+  //           </div>
+  //         </div>
+          
+  //       </div>
+  //     )
+  //   })
+
+  //   for(let i=0; i<list; i++){
+  //     result.push(
+  //       list[i]
+  //     )
+  //   }
+
+  //   return result
+    
+  // }
+  function getPosts() {
+    // let list = [];
+    // let result = [];
+
+    return posts.map(post => {
+      return (
         <div key={uniqid()} className="blog-card">
           <div className="image-featured">
             
-          </div>
-          <div className="title-block">
+           </div>
+           <div className="title-block">
             <div className="title">
               <h3>{post.title}</h3>
-            </div>
-            <div className="date-btn">
-              <span id="date">
-                September,2022
-              </span>
-              <Link to={`/blog/${post.author}`}>
-                <button className='more-btn'><img id='arrow-right' src={arrowRight} alt="arrow right" /></button>
-              </Link>
-            </div>
-          </div>
+             </div>
+             <div className="date-btn">
+               <span id="date">
+                 September,2022
+               </span>
+               <Link to={`/blog/${post.author}`}>
+                 <button className='more-btn'><img id='arrow-right' src={arrowRight} alt="arrow right" /></button>
+               </Link>
+             </div>
+           </div>
           
-        </div>
+         </div>
       )
     })
 
-    for(let i=0; i<list.length-90; i++){
-      result.push(
-        list[i]
-      )
-    }
-
-    return result
-    
+    // for (let i = 0; i < list; i++){
+    //   result.push(list[i])
+    // }
   }
 
+  // if(posts.length === 0) {
+  //   return null
+  // }
+
+  console.log(getPosts())
   return (
     <>
       <section className='hero'>

@@ -326,3 +326,53 @@ nav li a{
         margin-bottom: 1.2rem;
     }
 }
+
+/* Single blog styles */
+.single-container{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* border: 2px solid red; */
+}
+
+.single-content > h1 {
+    margin: 3rem 2rem 0 2rem;
+    color: rgb(235, 86, 86);
+    text-align: center;
+}
+
+.single-content > p {
+    margin: 2rem 2rem 0 2rem;
+    text-align: center;
+}
+
+.apple-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    padding: 1.2rem;
+}
+
+.apple-img > img {
+    object-fit: cover;
+    max-width: 20rem;
+    height: 20rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .single-container {
+        border: 1px solid lime;
+        display: block;
+        margin: 0 10rem 0;
+    }
+
+    .single-content > p {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    
+}
