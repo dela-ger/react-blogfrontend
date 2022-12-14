@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <>
     <header>
-        <h2 className='nav-logo'><NavLink to="/">Kob's Blog</NavLink></h2>
+        <h2 className='nav-logo'><NavLink to="/home">Kob's Blog</NavLink></h2>
     
         <nav className="nav-container" ref={navRef}>
             <li>

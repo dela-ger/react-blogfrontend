@@ -5,6 +5,7 @@ import apple from '../Assets/apple.png'
 import Footer from './Footer';
 import  { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore'
+import NavBar from './NavBar';
 
 function SingleBlog(props) {
   const [posts, setPosts] = useState([])  
@@ -58,6 +59,7 @@ function SingleBlog(props) {
     // console.log(detail)
   return (
     <>
+    <NavBar />
       
       <div className='single-container'>
         <div className="single-content">
@@ -72,7 +74,7 @@ function SingleBlog(props) {
        
       </div>
     
-    <Link to="/">Home</Link>
+    <Link to="/home">Home</Link>
     <Footer />
     </>
     

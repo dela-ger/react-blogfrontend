@@ -12,14 +12,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <main>
           <Routes>
-            <Route path="/" element={<Layout />}>
-              <Route index element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:postAuthor" element={<SingleBlog />} />
-            </Route>
+            <Route path="/react-blogfrontend" element={<Home />} />
+              
+                <Route path="/home" element={<Home />}/>
+                <Route path="/about" element={<About />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:postAuthor" element={<SingleBlog />} />
+            
           </Routes>
+        </main>  
       </BrowserRouter>
     </>
   );

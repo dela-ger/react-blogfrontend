@@ -5,26 +5,10 @@ import arrowRight from "../Assets/arrow-right-solid.svg";
 import axios from 'axios';
 import  { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore'
+import NavBar from './NavBar';
 
 function Home() {
-  // const url = 'https://newsapi.org/v2/everything?' +
-  // 'q=Apple&' +
-  // 'from=2022-12-14&' +
-  // 'sortBy=popularity&' +
-  // 'apiKey=8eae748eabe14f11ae29039013de3dfe';
   const [posts, setPost] = useState([])
-
-  // const fetchNews = async () =>{
-  //   try {
-  //     const response = await axios.get(url)
-  //     const data = response.data
-  //     const articles = data.articles
-      
-  //     setPost(articles)
-  //   } catch (error) {
-  //     console.log(error.response)
-  //   }
-  // }
 
   const fetchNews = () => {
     const postsRef = collection(db, 'posts')
@@ -41,7 +25,7 @@ function Home() {
     fetchNews()
   },[])
 
-  // console.log(posts)
+  // console.log(yposts)
 
   
   
@@ -122,6 +106,7 @@ function Home() {
   console.log(getPosts())
   return (
     <>
+    <NavBar />
       <section className='hero'>
         <div className="hero-content">
           <h1> What Topic will we put here...</h1>
